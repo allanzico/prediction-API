@@ -4,9 +4,13 @@ import Predictions from './components/predictions';
 
 
 class App extends Component {
-  state = {
-    predictions: {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      predictions: []
+    }
   }
+
 
   componentDidMount() {
     fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-06", {
@@ -28,5 +32,9 @@ class App extends Component {
       <Predictions predictions={this.state.predictions} />
     );
   }
+
+
 }
+
+
 export default App;

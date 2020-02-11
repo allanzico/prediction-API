@@ -5,7 +5,7 @@ const Predictions = ({ predictions }) => {
     return (
         <div>
             <center><h1>Predictions</h1></center>
-            {this.props.predictions.map((prediction) => (
+            {predictions.map((prediction) => (
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{prediction.homeTeam.team_name}</h5>
