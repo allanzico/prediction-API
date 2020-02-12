@@ -1,13 +1,13 @@
 
 import React, { Component } from 'react';
-import Predictions from './components/predictions';
+import Fixtures from './components/fixtures';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      predictions: []
+      predictions: {}
     }
   }
 
@@ -29,7 +29,7 @@ class App extends Component {
 
   render() {
     return (
-      <Predictions predictions={this.state.predictions} />
+      <Fixtures fixtures={this.state.predictions.api && this.state.predictions.api.fixtures} />
     );
   }
 
