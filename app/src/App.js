@@ -13,10 +13,10 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-12", {
+    fetch("https://football-prediction-api.p.rapidapi.com/api/v2/predictions?market=classic", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+        "x-rapidapi-host": "football-prediction-api.p.rapidapi.com",
         "x-rapidapi-key": "fdc81b8c93msh5db28ab6f2c8da6p1858ebjsnc97fa5269d0e"
       }
     }).then(Response => Response.json())
@@ -29,7 +29,7 @@ class App extends Component {
 
   render() {
     return (
-      <Fixtures fixtures={this.state.predictions.api && this.state.predictions.api.fixtures} />
+      <Fixtures fixtures={this.state.predictions.data && this.state.predictions.data} />
     );
   }
 

@@ -9,12 +9,27 @@ const Fixtures = ({ fixtures }) => {
             {fixtures && fixtures.map((fixture, index) => (
                 <div className="card" key={index}>
                     <div className="card-body">
-                        <h5 className="card-subtitle"><img src={fixture.homeTeam.logo} style={{width: 20, height: 20}}></img>{fixture.homeTeam.team_name} VS {fixture.awayTeam.team_name} <img src={fixture.awayTeam.logo} style={{width: 20, height: 20}}></img></h5>
-                        <h6 className="card-subtitle mb-2 text-muted"></h6>
-                        <p className="card-text"></p>
+                        <h5 className="cart-title ">
+                            {fixture.home_team} VS {fixture.away_team}
+                        </h5 >
+                        <h6 className="card-subtitle mb2 text-muted ">
+                            Date time: {fixture.start_date}
+                        </h6>
+                        <p className="card-text">
+                        <p>
+                            Prediction: {fixture.prediction}
+                        </p>
+                            <p>
+
+                              <b>Odds: 1 X 2 </b>
+                              <p>{fixture.odds[1]} | {fixture.odds["X"]} | {fixture.odds[2]}</p>
+                            </p>
+
+                        </p>
                     </div>
                 </div>
-            ))}
+
+            ) )}
         </div>
     )
 };
