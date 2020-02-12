@@ -13,7 +13,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-06", {
+    fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/date/2020-02-12", {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
