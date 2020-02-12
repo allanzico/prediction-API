@@ -1,11 +1,30 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 
 
 const Fixtures = ({ fixtures }) => {
+    if (!fixtures) {
+        return (
+            <div>
+                <div className="heading"><h1>Omuyindi Wakuffa</h1></div>
+                <div className="card" >
+                    <div className="card-body">
+                        <h5 className="cart-title mb2 text-muted ">
+                            Just a money problem....
+                        </h5 >
+                        <h6 className="card-text ">
+                            Sorry! Nothing to display at this moment! Exceeded daily FREE quota
+                        </h6>
 
+                    </div>
+                </div>
+            </div>
+
+        );
+    }
     return (
         <div>
-          <h1>Fixtures</h1>
+            <div className="heading"><h1>Omuyindi Wakuffa</h1></div>
             {fixtures && fixtures.map((fixture, index) => (
                 <div className="card" key={index}>
                     <div className="card-body">
@@ -16,20 +35,33 @@ const Fixtures = ({ fixtures }) => {
                             Date time: {fixture.start_date}
                         </h6>
                         <p className="card-text">
-                        <p>
-                            Prediction: {fixture.prediction}
-                        </p>
                             <p>
+                                <span style={{ width: '100%' }}>
+                                    <b>Prediction: {fixture.prediction}</b>
+                                </span>
 
-                              <b>Odds: 1 X 2 </b>
-                              <p>{fixture.odds[1]} | {fixture.odds["X"]} | {fixture.odds[2]}</p>
+                            </p>
+                            <p>
+                                <div className="card small-card">
+                                    <div className="odds-text">
+                                        <b>Odds: 1 X 2</b>
+                                        <p>{fixture.odds[1]} | {fixture.odds["X"]} | {fixture.odds[2]}</p>
+                                    </div>
+                                </div>
+                                <div className="card small-card">
+                                    <div className="odds-text">
+                                        <b>Odds:</b>
+                                        <p>{fixture.odds[1]} | {fixture.odds["X"]} | {fixture.odds[2]}</p>
+                                    </div>
+                                </div>
+
                             </p>
 
                         </p>
                     </div>
                 </div>
 
-            ) )}
+            ))}
         </div>
     )
 };
