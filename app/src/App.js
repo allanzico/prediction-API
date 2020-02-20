@@ -9,10 +9,18 @@ class App extends Component {
     this.state = {
       predictions: {}
     }
+
+    this.fetchPredictions = this.fetchPredictions.bind(this);
   }
 
 
   componentDidMount() {
+    this.fetchPredictions();
+
+  }
+
+
+  fetchPredictions() {
     fetch("https://football-prediction-api.p.rapidapi.com/api/v2/predictions?market=classic", {
       "method": "GET",
       "headers": {

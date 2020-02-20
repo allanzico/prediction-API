@@ -22,6 +22,11 @@ body {
   overflow: hidden;
 
 }
+.button-container{
+  margin: auto;
+  display: flex;
+}
+
 .header-title {
   text-align: center;
   font-weight: bold;

@@ -1,9 +1,11 @@
 import React from 'react';
-import {Badge, Button, Card, CardBody, CardText, CardTitle, Col, Row} from "reactstrap";
+import { Badge, Button, Card, CardBody, CardText, CardTitle, Col, Row } from "reactstrap";
+
 
 
 
 const Fixtures = ({ fixtures }) => {
+
     if (!fixtures) {
         return (
             <div className="container">
@@ -30,20 +32,19 @@ const Fixtures = ({ fixtures }) => {
             <header className="header">
                 <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
             </header>
-
-
             {fixtures && fixtures.map((fixture, index) => (
+
                 <div className="card" key={index}>
                     <div className="card-body">
                         <p className="league-country card-title ">
                             {fixture.competition_name} | {fixture.competition_cluster}
                         </p >
-                        <hr className="spacer"/>
+                        <hr className="spacer" />
                         <h5 className="fixture-name card-title mb-2 ">
                             {fixture.home_team} VS {fixture.away_team}
                         </h5 >
                         <h6 className="match-date card-text mb2 text-muted ">
-                      {new Date(fixture.start_date).toUTCString()}
+                            {new Date(fixture.start_date).toUTCString()}
                         </h6>
                         <p className="card-text">
                             <p>
@@ -73,6 +74,8 @@ const Fixtures = ({ fixtures }) => {
                 </div>
 
             ))}
+
+
         </div>
     )
 };
