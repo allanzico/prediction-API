@@ -4,5 +4,3 @@
 :
 
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
-M
-src/components/predictions.js,7/6/764b59c380228952288a4b0e1d7eec4d41c96073
