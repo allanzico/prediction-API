@@ -3,11 +3,30 @@ body {
   background: #f4f4f4;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  margin: 10px auto;
+  margin: 0px auto;
 }
-
-.heading {
+.container{
+  margin: 0 auto;
+}
+.header{
+  min-width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  flex-direction: column;
+  padding: 20px;
+ background: darkslateblue;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+}
+.header-title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 auto;
 }
 
 .card {
@@ -20,10 +39,12 @@ body {
   box-shadow: -1px 5px 10px -12px black;
 }
 .match-date {
-  font-size: 12px;
+  font-size: 10px;
 }
 .league-country {
   font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .fixture-name{

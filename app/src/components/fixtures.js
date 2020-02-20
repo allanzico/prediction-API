@@ -6,8 +6,10 @@ import {Badge, Button, Card, CardBody, CardText, CardTitle, Col, Row} from "reac
 const Fixtures = ({ fixtures }) => {
     if (!fixtures) {
         return (
-            <div>
-                <div className="heading"><h1>Omuyindi Wakuffa</h1></div>
+            <div className="container">
+                <header className="card">
+                    <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
+                </header>
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="cart-title mb2 text-muted ">
@@ -25,13 +27,17 @@ const Fixtures = ({ fixtures }) => {
     }
     return (
         <div>
-            <div className="heading"><h1>Omuyindi Wakuffa</h1></div>
+            <header className="header">
+                <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
+            </header>
+
+
             {fixtures && fixtures.map((fixture, index) => (
                 <div className="card" key={index}>
                     <div className="card-body">
-                        <h6 className="league-country card-title ">
+                        <p className="league-country card-title ">
                             {fixture.competition_name} | {fixture.competition_cluster}
-                        </h6 >
+                        </p >
                         <hr className="spacer"/>
                         <h5 className="fixture-name card-title mb-2 ">
                             {fixture.home_team} VS {fixture.away_team}
