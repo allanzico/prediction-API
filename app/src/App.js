@@ -17,7 +17,7 @@ class App extends Component {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "football-prediction-api.p.rapidapi.com",
-        "x-rapidapi-key": "fdc81b8c93msh5db28ab6f2c8da6p1858ebjsnc97fa5269d0e"
+        "x-rapidapi-key": "6c2959b2d1msh898657065a254ecp107e42jsn7f3f1e40fa18"
       }
     }).then(Response => Response.json())
       .then((data) => {
