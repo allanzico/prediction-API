@@ -17,8 +17,22 @@ body {
 .small-card{
   position: relative;
   margin: 10px auto;
+  box-shadow: -1px 5px 10px -12px black;
+}
+.match-date {
+  font-size: 12px;
+}
+.league-country {
+  font-weight: bold;
+}
 
-  
+.fixture-name{
+  color: darkslateblue;
+}
+
+.prediction-badge {
+  background: darkslateblue;
+  padding: 8px;
 }
 .odds-text{
   padding-left: 5px;

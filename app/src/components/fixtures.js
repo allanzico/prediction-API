@@ -1,4 +1,5 @@
 import React from 'react';
+import {Badge, Button, Card, CardBody, CardText, CardTitle, Col, Row} from "reactstrap";
 
 
 
@@ -28,15 +29,19 @@ const Fixtures = ({ fixtures }) => {
             {fixtures && fixtures.map((fixture, index) => (
                 <div className="card" key={index}>
                     <div className="card-body">
-                        <h5 className="cart-title ">
+                        <h6 className="league-country card-title ">
+                            {fixture.competition_name} | {fixture.competition_cluster}
+                        </h6 >
+                        <hr className="spacer"/>
+                        <h5 className="fixture-name card-title mb-2 ">
                             {fixture.home_team} VS {fixture.away_team}
                         </h5 >
-                        <h6 className="card-subtitle mb2 text-muted ">
-                            Date time: {fixture.start_date}
+                        <h6 className="match-date card-text mb2 text-muted ">
+                      {new Date(fixture.start_date).toUTCString()}
                         </h6>
                         <p className="card-text">
                             <p>
-                                <span style={{ width: '100%' }}>
+                                <span className="prediction-badge badge badge-info ">
                                     <b>Prediction: {fixture.prediction}</b>
                                 </span>
 
