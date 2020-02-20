@@ -32,7 +32,7 @@ const Fixtures = ({ fixtures }) => {
                             {fixture.home_team} VS {fixture.away_team}
                         </h5 >
                         <h6 className="card-subtitle mb2 text-muted ">
-                            Date time: {fixture.start_date}
+                            Date time: {toString(fixture.start_date)}
                         </h6>
                         <p className="card-text">
                             <p>
@@ -50,8 +50,8 @@ const Fixtures = ({ fixtures }) => {
                                 </div>
                                 <div className="card small-card">
                                     <div className="odds-text">
-                                        <b>Odds:</b>
-                                        <p>{fixture.odds[1]} | {fixture.odds["X"]} | {fixture.odds[2]}</p>
+                                        <b>Odds: 12 X2 1X</b>
+                                        <p>{fixture.odds[12]} | {fixture.odds["1X"]} | {fixture.odds["X2"]}</p>
                                     </div>
                                 </div>
 
