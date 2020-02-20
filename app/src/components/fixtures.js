@@ -32,7 +32,7 @@ const Fixtures = ({ fixtures }) => {
                             {fixture.home_team} VS {fixture.away_team}
                         </h5 >
                         <h6 className="card-subtitle mb2 text-muted ">
-                            Date time: {toString(fixture.start_date)}
+                            Date time: {new Date(fixture.start_date)}
                         </h6>
                         <p className="card-text">
                             <p>
