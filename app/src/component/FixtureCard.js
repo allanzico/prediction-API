@@ -5,17 +5,19 @@ import  PropTypes from "prop-types";
 import _ from 'lodash';
 
 
-
 export  const FixtureCard = props =>{
     const {store, actions} = useContext(Context);
 
     let predict = store.predictions;
-    const  sorted = Object.values(predict).sort((a,b)=>a.start_date-b.start_date)
+    const  sorted = Object.values(predict).sort((a,b)=>a.id-b.id)
     const sortingAlgorithms = {
         "byCountryAsc": (a,b) => a - b,
         "byCountryDesc": (a,b) => b.competition_cluster - a.competition_cluster,
        // / "byYearDesc": (a,b) => b.year_produced - a.year_produced
     };
+
+    console.log(sorted);
+    console.log(predict);
 
 
     return(
@@ -23,10 +25,10 @@ export  const FixtureCard = props =>{
             <header className="header">
                 <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
             </header>
-            {store.predictions.data && store.predictions.data.sort(((a, b) =>a.start_date-b.start_date )).map((prediction, index) => (
+            {store.predictions.data && store.predictions.data.sort(((a, b) =>a.id-b.id )).map((prediction, index) => (
 
                 <div className="card" key={index}>
-                 
+
                     <div className="card-body">
                         <span className="league-country card-title ">
                             {prediction.competition_name} | {prediction.competition_cluster}
