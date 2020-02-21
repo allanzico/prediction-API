@@ -7,19 +7,33 @@ import _ from 'lodash';
 
 export const FixtureCard = props => {
     const { store, actions } = useContext(Context);
+    let  fixtures = store.predictions;
 
-    let predict = store.predictions;
-    const sorted = Object.values(predict).sort((a, b) => a.id - b.id)
     const sortingAlgorithms = {
         "byCountryAsc": ((a, b) => (a.competition_cluster > b.competition_cluster) - (a.competition_cluster < b.competition_cluster)),
         "byStartDateAsc": ((a, b) => (a.start_date > b.start_date) - (a.start_date < b.start_date))
-        // / "byYearDesc": (a,b) => b.year_produced - a.year_produced
     };
 
+    if (!fixtures){
+        return (
+            <div>
+                <div className="card" >
 
+                    <div className="card-body">
 
-    console.log(sorted);
-    console.log(predict);
+                        <span className="card-text">
+                            <p>
+
+                                Nothing to Display! Daily free quota exceeded! Please try again later
+
+                            </p>
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
 
     return (
