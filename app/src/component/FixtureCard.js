@@ -1,31 +1,31 @@
-import  React, {useState, useEffect,useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 
-import {Context} from "../store/appContext";
-import  PropTypes from "prop-types";
+import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
 import _ from 'lodash';
 
 
-export  const FixtureCard = props =>{
-    const {store, actions} = useContext(Context);
+export const FixtureCard = props => {
+    const { store, actions } = useContext(Context);
 
     let predict = store.predictions;
-    const  sorted = Object.values(predict).sort((a,b)=>a.id-b.id)
+    const sorted = Object.values(predict).sort((a, b) => a.id - b.id)
     const sortingAlgorithms = {
-        "byCountryAsc": (a,b) => a - b,
-        "byCountryDesc": (a,b) => b.competition_cluster - a.competition_cluster,
-       // / "byYearDesc": (a,b) => b.year_produced - a.year_produced
+        "byCountryAsc": ((a, b) => (a.competition_cluster > b.competition_cluster) - (a.competition_cluster < b.competition_cluster)),
+        "byStartDateAsc": ((a, b) => (a.start_date > b.start_date) - (a.start_date < b.start_date))
+        // / "byYearDesc": (a,b) => b.year_produced - a.year_produced
     };
+
+
 
     console.log(sorted);
     console.log(predict);
 
 
-    return(
+    return (
         <div>
-            <header className="header">
-                <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
-            </header>
-            {store.predictions.data && store.predictions.data.sort(((a, b) =>(a.start_date > b.start_date)- (a.start_date < b.start_date) )).map((prediction, index) => (
+
+            {store.predictions.data && store.predictions.data.sort(sortingAlgorithms[store.predictionsSortAlgorithm]).map((prediction, index) => (
 
                 <div className="card" key={index}>
 
@@ -74,7 +74,7 @@ export  const FixtureCard = props =>{
 
 //Define the data-types for the component's properties
 
-FixtureCard.propTypes ={
+FixtureCard.propTypes = {
     match: PropTypes.object,
     history: PropTypes.object,
     onDelete: PropTypes.func

@@ -7,7 +7,7 @@ const getState = ({ getStore,  setStore }) => {
 
         store: {
             predictions: {},
-            predictionsSortAlgorithm: "byCountryAsc"
+            predictionsSortAlgorithm: "byStartDate"
 
         },
         actions: {
@@ -24,9 +24,14 @@ const getState = ({ getStore,  setStore }) => {
                     }).catch(console.log)
             },
 
-            sortByCountryDesc(){
+            sortByCountryAsc(){
                 setStore({
-                    predictionsSortAlgorithm: "byCountryDesc"
+                    predictionsSortAlgorithm: "byCountryAsc"
+                })
+            } ,
+            sortByStartDate(){
+                setStore({
+                    predictionsSortAlgorithm: "byStartDateAsc"
                 })
             }
         }

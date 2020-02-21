@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   padding: 20px;
  background: darkslateblue;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: hidden;
 
 }
@@ -59,6 +59,18 @@ body {
 .prediction-badge {
   background: darkslateblue;
   padding: 8px;
+}
+
+.sort-btn{
+  background: darkslateblue;
+  font-size: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.sort-toolbar{
+  margin: 0 auto;
+  width: 50%;
 }
 .odds-text{
   padding-left: 5px;
