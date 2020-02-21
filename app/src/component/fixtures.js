@@ -11,31 +11,33 @@ const Fixtures = () => {
             <header className="header">
                 <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
             </header>
-            <div className="btn-toolbar sort-toolbar mr-2 ">
+          <div className="toolbar-container">
+              <div className="btn-toolbar sort-toolbar mr-2 ">
 
-                <div className="btn-group mr-2">
-                    <button
-                        type="button"
-                        className="btn btn-dark btn-sm sort-btn"
-                        onClick={() => {
-                           actions.sortByCountryAsc();
-                        }}
-                    >
-                        country
-                  </button>
-                </div>
-                <div className="btn-group mr-2">
-                    <button
-                        type="button"
-                        className="btn btn-dark btn-sm sort-btn"
-                        onClick={() => {
-                           actions.sortByStartDate();
-                        }}
-                    >
-                        Start date
-                  </button>
-                </div>
-            </div>
+                  <div className="btn-group mr-2">
+                      <button
+                          type="button"
+                          className="btn btn-dark btn-sm sort-btn"
+                          onClick={() => {
+                              actions.sortByCountryAsc();
+                          }}
+                      >
+                          country
+                      </button>
+                  </div>
+                  <div className="btn-group mr-2">
+                      <button
+                          type="button"
+                          className="btn btn-dark btn-sm sort-btn"
+                          onClick={() => {
+                              actions.sortByStartDate();
+                          }}
+                      >
+                          Start date
+                      </button>
+                  </div>
+              </div>
+          </div>
             <FixtureCard/>
         </Container>
 
