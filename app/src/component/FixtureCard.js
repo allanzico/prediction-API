@@ -7,13 +7,16 @@ import  PropTypes from "prop-types";
 
 export  const FixtureCard = props =>{
     const {store, actions} = useContext(Context);
+
+    const predict = store.predictions;
+    const  sorted = Object.values(predict).sort((a,b)=>a.start_date-b.start_date);
     const sortingAlgorithms = {
-        "byCountryAsc": (a,b) => a.competition_cluster - b.competition_cluster,
+        "byCountryAsc": (a,b) => a - b,
         "byCountryDesc": (a,b) => b.competition_cluster - a.competition_cluster,
        // / "byYearDesc": (a,b) => b.year_produced - a.year_produced
     };
-
-    console.log(store.predictions.data);
+    console.log(predict);
+    console.log(sorted);
 
 
     return(
