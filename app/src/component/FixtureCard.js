@@ -25,7 +25,7 @@ export  const FixtureCard = props =>{
             <header className="header">
                 <div className="header-title"><h3>Omuyindi Wakuffa</h3></div>
             </header>
-            {store.predictions.data && store.predictions.data.sort(((a, b) =>a.id-b.id )).map((prediction, index) => (
+            {store.predictions.data && store.predictions.data.sort(((a, b) =>(a.start_date > b.start_date)- (a.start_date < b.start_date) )).map((prediction, index) => (
 
                 <div className="card" key={index}>
 
